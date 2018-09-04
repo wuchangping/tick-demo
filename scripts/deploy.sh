@@ -4,12 +4,10 @@ deploy () {
   case $1 in 
     start)
       config set
-	  sleep 2
       create cluster
-	  sleep 3
       create disks
-	  sleep 3
       create tick
+	  create flink
       exit 0
       ;;
     shutdown)

@@ -70,7 +70,7 @@ This tool offers a couple of different options:
 To create a new cluster running the full stack and return the IP where chronograf is running:
 
 ```bash
-$ ./tick-kube spin up
+$ ./tick-kube deploy start
 ```
 
 This command is a shortcut that runs following commands in order:
@@ -162,7 +162,7 @@ You can tear down either the full cluster or just the Kubernetes objects and per
 To destroy all resources created by this demo run:
 
 ```bash
-$ ./tick-kube spin down
+$ ./tick-kube deploy shutdown
 ```
 
 This command takes a few minutes and will require user input at 2 different places. This command is a shortcut that runs following commands in order:

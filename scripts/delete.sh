@@ -2,15 +2,19 @@
 
 delete-disks () {
   echo "Deleting disks for tick..."
-  gcloud compute disks delete chronograf kapacitor influxdb
+  gcloud compute disks delete chronograf kapacitor influxdb --zone=$ZONE
 }
 
 delete-tick () {
   kubectl delete ns tick
 }
 
+delete-flink () {
+  kubectl delete ns flink
+}
+
 delete-cluster () {
-  gcloud container clusters delete $CLUSTER
+  gcloud container clusters delete $CLUSTER --zone=$ZONE
 }
 
 delete-usage () {
@@ -32,17 +36,17 @@ HERE
 
 delete () {
   case $1 in
+    flink)
+      delete-flink
+      ;;
     tick)
       delete-tick
-      exit 0
       ;;
     cluster)
       delete-cluster
-      exit 0
       ;;
     disks)
       delete-disks
-      exit 0
       ;;
     *)
       echo "USAGE: $0 $1"

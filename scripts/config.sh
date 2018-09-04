@@ -43,11 +43,9 @@ config () {
   case $1 in 
     list)
       config-list
-      exit 0
       ;;
     set)
       config-set
-      exit 0
       ;;
     *) 
       echo "USAGE: $0 $1"

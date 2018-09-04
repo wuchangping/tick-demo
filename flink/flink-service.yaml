@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flink
+  namespace: flink
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8081
+    name: http
+    targetPort: 8081
+    protocol: TCP
+  - port: 6123
+    name: rpc
+    targetPort: 6123
+  - port: 6124
+    name: blob
+    targetPort: 6124
+  - port: 6125
+    name: query
+    targetPort: 6125
+  - port: 8125
+    name: metrics
+    targetPort: 8125
+    protocol: UDP
+  selector:
+    component: jobmanager
