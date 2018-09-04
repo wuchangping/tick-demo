@@ -22,7 +22,7 @@ create-disks () {
 create-flink () {
   echo "Creating flink..."
   kube $BP/flink/namespace.yaml
-  kube $BP/flink/jobmanager-service.yaml
+  kube $BP/flink/flink-service.yaml
   kube $BP/flink/jobmanager-deployment.yaml
   kube $BP/flink/taskmanager-deployment.yaml
 
