@@ -3,14 +3,12 @@ kind: Deployment
 metadata:
   name: flink-jobmanager
   namespace: flink
-  labels:
-    app: flink-jobmanager
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: flink-jobmanager
+        app: flink
         component: jobmanager
     spec:
       containers:

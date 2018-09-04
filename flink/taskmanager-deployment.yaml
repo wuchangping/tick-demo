@@ -3,14 +3,12 @@ kind: Deployment
 metadata:
   name: flink-taskmanager
   namespace: flink
-  labels:
-    app: flink-taskmanager
 spec:
   replicas: 2
   template:
     metadata:
       labels:
-        app: flink-taskmanager
+        app: flink
         component: taskmanager
     spec:
       containers:
@@ -30,3 +28,4 @@ spec:
         env:
         - name: JOB_MANAGER_RPC_ADDRESS
           value: flink-jobmanager
+          
