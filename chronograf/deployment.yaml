@@ -11,7 +11,7 @@ spec:
         app: chronograf
     spec:
       containers:
-      - image: quay.io/influxdb/chronograf:latest
+      - image: chronograf:latest
         imagePullPolicy: Always
         name: chronograf
         ports:

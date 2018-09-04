@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-BP=$GOPATH/src/github.com/jackzampolin/tick-kube
+BP=$(pwd)
 
 # Name of cluster 
-CLUSTER=sales-demo-cluster
+CLUSTER=tick-demo-cluster
 
 # Name of gcloud project
-PROJECT=influx-perf-testing
+PROJECT=pravega-dev
 
 # gcloud region
 REGION=us-west1
