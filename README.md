@@ -18,25 +18,23 @@ Included are the full set of kubernetes deployment files for the stack.
 Pull this repo:
 
 ```bash
-# Easiest if you have go installed
-$ go get -v github.com/jackzampolin/tick-kube
 
 # One extra configuration change
-$ git clone git@github.com:jackzampolin/tick-kube.git
+$ git clone https://github.com/wuchangping/tick-kube.git
 ```
 
 Personalize the variables in `/config.sh`:
 
 ```bash
 # Defaults to go get download. Modify to be root of repo if using git clone
-BP=$GOPATH/src/github.com/jackzampolin/tick-kube
+BP=$(pwd)
 
 # Name of desired cluster.
 # If using an existing cluster set that cluster's name
-CLUSTER=influx-test-cluster
+CLUSTER=tick-demo-1
 
 # Name of gcloud project to use
-PROJECT=influx-perf-testing
+PROJECT=pravega-dev
 
 # gcloud region
 REGION=us-west1

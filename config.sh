@@ -2,7 +2,7 @@
 BP=$(pwd)
 
 # Name of cluster 
-CLUSTER=tick-demo-cluster
+CLUSTER=tick-demo-1
 
 # Name of gcloud project
 PROJECT=pravega-dev

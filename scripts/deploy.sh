@@ -1,37 +1,40 @@
 #!/usr/bin/env bash
 
-spin () {
+deploy () {
   case $1 in 
-    up)
+    start)
       config set
+	  sleep 2
       create cluster
+	  sleep 3
       create disks
+	  sleep 3
       create tick
       exit 0
       ;;
-    down)
+    shutdown)
       delete cluster
       delete disks
       exit 0
       ;;
     *)
       echo "USAGE: $0 $1"
-      spin-usage
+      deploy-usage
       exit 1
       ;;
   esac
 }
 
-spin-usage () {
+deploy-usage () {
   cat <<-HERE
-  $0 spin
-  - spin has the following subcommands
+  $0 deploy
+  - deploy has the following subcommands
   
-    - spins up a new cluster w/ all resources and provisions the full tick stack
-    $ $0 spin up
+    - deploy start a new cluster w/ all resources and provisions the full tick stack
+    $ $0 deploy start
 
     - deletes the cluster and all associated resources
-    $ $0 spin down
+    $ $0 deploy shutdown
     
 HERE
 }

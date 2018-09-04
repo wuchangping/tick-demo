@@ -6,7 +6,7 @@ source ./scripts/config.sh
 source ./scripts/create.sh
 source ./scripts/delete.sh
 source ./scripts/update.sh
-source ./scripts/spin.sh
+source ./scripts/deploy.sh
 
 case $1 in
   attach)
@@ -25,8 +25,8 @@ case $1 in
     delete $2 $3
     exit 0
     ;;
-  spin)
-    spin $2 $3
+  deploy)
+    deploy $2 $3
     exit 0
     ;;
   update)
@@ -40,7 +40,7 @@ case $1 in
     config-usage
     create-usage
     delete-usage
-    spin-usage
+    deploy-usage
     update-usage
     exit 1
     ;;
