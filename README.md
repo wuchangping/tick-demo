@@ -20,7 +20,7 @@ Pull this repo:
 ```bash
 
 # One extra configuration change
-$ git clone https://github.com/wuchangping/tick-kube.git
+$ git clone https://github.com/wuchangping/tick-demo.git
 ```
 
 Personalize the variables in `/config.sh`:

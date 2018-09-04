@@ -27,8 +27,6 @@ spec:
           name: query
         - containerPort: 8081
           name: http
-        - containerPort: 8125
-          name: metrics
         env:
         - name: JOB_MANAGER_RPC_ADDRESS
           value: flink-jobmanager

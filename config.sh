@@ -18,7 +18,7 @@ DISK=100
 
 # gcloud instance types
 # Type "gcloud compute machine-types list" to get the machine types list.
-MACHINE=n1-standard-2
+MACHINE=n1-standard-1
 
 # Number of nodes for kubernetes cluster
 NUM_NODES=3

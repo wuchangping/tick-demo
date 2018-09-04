@@ -19,9 +19,5 @@ spec:
   - port: 6125
     name: query
     targetPort: 6125
-  - port: 8125
-    name: metrics
-    targetPort: 8125
-    protocol: UDP
   selector:
     component: jobmanager
