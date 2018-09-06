@@ -30,6 +30,16 @@ create-flink () {
   kubectl get svc --namespace flink  
 }
 
+create-flink-standalone () {
+  echo "Creating flink standalone..."
+  kube $BP/flink-standalone/namespace.yaml
+  kube $BP/flink-standalone/service.yaml
+  kube $BP/flink-standalone/deployment.yaml
+
+  echo "kubectl get svc --namespace flink  "
+  kubectl get svc --namespace flink  
+}
+
 create-tick () {
   echo "Creating tick..."
   echo "tick is the full stack of InfluxData products running in production configuration"
@@ -61,6 +71,12 @@ create-usage () {
   
     - creates all kube based resources for this application 
     $ $0 create tick
+  
+    - creates all kube based resources for this application 
+    $ $0 create flink
+
+    - creates all kube based resources for this application 
+    $ $0 create flink-standalone
     
 HERE
 }
@@ -69,6 +85,9 @@ create () {
   case $1 in
     flink)
       create-flink
+      ;;
+    flink-standalone)
+      create-flink-standalone
       ;;
     tick)
       create-tick

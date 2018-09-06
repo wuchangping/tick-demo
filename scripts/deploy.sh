@@ -9,13 +9,13 @@ deploy () {
       sleep 2
       create disks
       sleep 2
-      create flink
+      create flink-standalone
       sleep 2
       create tick
       exit 0
       ;;
     shutdown)
-      delete flink
+      delete flink-standalone
       delete tick
       delete cluster
       delete disks
