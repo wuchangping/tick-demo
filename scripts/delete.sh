@@ -3,8 +3,7 @@
 delete-disks () {
   echo "Deleting disks for tick..."
   gcloud compute disks delete chronograf kapacitor influxdb --zone=$ZONE
-  gcloud compute disks delete influxdb-data --zone=$ZONE
-  gcloud compute disks delete grafana-data --zone=$ZONE
+  gcloud compute disks delete influxdb-data grafana-data --zone=$ZONE
 }
 
 delete-tick () {
