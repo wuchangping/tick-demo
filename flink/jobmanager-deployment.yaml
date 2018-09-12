@@ -11,6 +11,7 @@ spec:
         app: flink
         component: jobmanager
     spec:
+      hostNetwork: true
       containers:
       - name: jobmanager
         image: flink:latest

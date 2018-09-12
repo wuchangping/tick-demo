@@ -10,6 +10,7 @@ spec:
       labels:
         app: influxdb
     spec:
+      hostNetwork: true
       containers:
       - image: influxdb:latest
         imagePullPolicy: Always

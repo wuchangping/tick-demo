@@ -11,6 +11,7 @@ spec:
         app: flink
         component: taskmanager
     spec:
+      hostNetwork: true
       containers:
       - name: taskmanager
         image: flink:latest
