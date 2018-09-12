@@ -18,12 +18,12 @@ spec:
             - mountPath: /etc/telegraf
               name: telegraf
           resources:
-          limits:
-            cpu: 1
-            memory: 1Gi
-          requests:
-            cpu: 100m
-            memory: 10Mi
+            limits:
+              cpu: 1
+              memory: 1Gi
+            requests:
+              cpu: 100m
+              memory: 10Mi
       volumes:
       - name: telegraf
         configMap:

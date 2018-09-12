@@ -70,11 +70,16 @@ create-tick () {
   kubectl get svc --namespace tick  
 }
 
+create-tigdisks () {
+  echo "Creating persistent disks for the tig stack..."
+  echo "InfluxDB Disk: $INFLUX_DISK"
+  echo "Grafana Disk: $OTHER_DISK"
+  gcloud compute disks create grafana-data --size=$OTHER_DISK
+  gcloud compute disks create influxdb-data --size=$INFLUX_DISK
+}
+
 create-tig () {
   echo "Creating tig..."
-  gcloud compute disks create influxdb-data --size=10GB
-  gcloud compute disks create grafana-data --size=10GB
-
   kube $BP/tig/namespace.yaml
   kube $BP/tig/influxdb-service.yaml
   kube $BP/tig/influxdb-deployment.yaml
@@ -133,6 +138,9 @@ create () {
       ;;
     disks)
       create-disks
+      ;;
+    tigdisks)
+      create-tigdisks
       ;;
     *)
       echo "USAGE: $0 $1"

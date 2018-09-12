@@ -12,6 +12,9 @@ delete-tick () {
 
 delete-tig () {
   kubectl delete ns tig
+}
+
+delete-tigdisks () {
   gcloud compute disks delete influxdb-data --zone=$ZONE
   gcloud compute disks delete grafana-data --zone=$ZONE
 }
@@ -71,6 +74,9 @@ delete () {
       ;;
     disks)
       delete-disks
+      ;;
+	tigdisks)
+      delete-tigdisks
       ;;
     *)
       echo "USAGE: $0 $1"
