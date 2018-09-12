@@ -22,8 +22,15 @@ spec:
         volumeMounts:
         - name: grafana-data
           mountPath: /var/lib/grafana
+        resources:
+          limits:
+            cpu: 1
+            memory: 1Gi
+          requests:
+            cpu: 100m
+            memory: 10Mi
       volumes:
       - name: grafana-data
         gcePersistentDisk:
-          pdName: grafana-1
+          pdName: grafana-data
           fsType: ext4

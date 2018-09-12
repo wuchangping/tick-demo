@@ -72,6 +72,9 @@ create-tick () {
 
 create-tig () {
   echo "Creating tig..."
+  gcloud compute disks create influxdb-data --size=10GB
+  gcloud compute disks create grafana-data --size=10GB
+
   kube $BP/tig/namespace.yaml
   kube $BP/tig/influxdb-service.yaml
   kube $BP/tig/influxdb-deployment.yaml

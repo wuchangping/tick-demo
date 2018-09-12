@@ -25,8 +25,15 @@ spec:
         volumeMounts:
         - name: influxdb-data
           mountPath: /var/lib/influxdb
+        resources:
+          limits:
+            cpu: 1
+            memory: 3Gi
+          requests:
+            cpu: 100m
+            memory: 10Mi
       volumes:
       - name: influxdb-data
         gcePersistentDisk:
-          pdName: influxdb-1
+          pdName: influxdb-data
           fsType: ext4
