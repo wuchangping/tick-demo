@@ -13,6 +13,10 @@ delete-flink () {
   kubectl delete ns flink
 }
 
+delete-flink-1 () {
+  kubectl delete ns flink-1
+}
+
 delete-cluster () {
   gcloud container clusters delete $CLUSTER --zone=$ZONE
 }
@@ -38,6 +42,9 @@ delete () {
   case $1 in
     flink)
       delete-flink
+      ;;
+    flink-1)
+      delete-flink-1
       ;;
     tick)
       delete-tick

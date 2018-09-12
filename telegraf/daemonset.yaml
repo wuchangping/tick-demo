@@ -9,7 +9,6 @@ spec:
       labels:
         app: telegraf
     spec:
-      hostNetwork: true
       containers:
         - name: telegraf
           image: telegraf:latest

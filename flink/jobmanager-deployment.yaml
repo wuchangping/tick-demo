@@ -14,7 +14,7 @@ spec:
       hostNetwork: true
       containers:
       - name: jobmanager
-        image: flink:latest
+        image: wuchangping/flink:1.6.0
         args:
         - jobmanager
         ports:

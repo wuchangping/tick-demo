@@ -10,7 +10,6 @@ spec:
       labels:
         app: chronograf
     spec:
-      hostNetwork: true
       containers:
       - image: chronograf:latest
         imagePullPolicy: Always

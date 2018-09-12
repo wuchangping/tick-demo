@@ -10,7 +10,6 @@ spec:
       labels:
         app: kapacitor
     spec:
-      hostNetwork: true
       containers:
       - image: kapacitor:latest
         imagePullPolicy: Always

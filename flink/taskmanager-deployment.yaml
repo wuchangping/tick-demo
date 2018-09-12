@@ -14,7 +14,7 @@ spec:
       hostNetwork: true
       containers:
       - name: taskmanager
-        image: flink:latest
+        image: wuchangping/flink:1.6.0
         args:
         - taskmanager
         ports:
@@ -26,7 +26,7 @@ spec:
           name: query
         - containerPort: 8081
           name: http
-        env:
-        - name: JOB_MANAGER_RPC_ADDRESS
-          value: flink-jobmanager
+ #       env:
+ #       - name: JOB_MANAGER_RPC_ADDRESS
+ #         value: flink-jobmanager
           
