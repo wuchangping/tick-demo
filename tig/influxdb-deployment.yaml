@@ -4,10 +4,10 @@ metadata:
   name: influxdb
   labels:
     app: influxdb
-  namespace: grafana
+  namespace: tig
 spec:
-  strategy:
-    type: Recreate
+#  strategy:
+#    type: Recreate
   template:
     metadata:
       labels:
@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
       - name: influxdb
-        image: influxdb
+        image: influxdb:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8083
           name: admin

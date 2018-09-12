@@ -4,7 +4,7 @@ metadata:
   labels:
     app: telegraf
   name: telegraf
-  namespace: grafana
+  namespace: tig
 spec:
   template:
     metadata:
@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: telegraf
-          image: telegraf:1.1.1
+          image: telegraf:latest
           volumeMounts:
             - mountPath: /etc/telegraf
               name: telegraf

@@ -1,6 +1,6 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: grafana
+  name: tig
   labels:
-    name: grafana
+    name: tig

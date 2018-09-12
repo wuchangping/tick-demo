@@ -9,8 +9,8 @@ delete-tick () {
   kubectl delete ns tick
 }
 
-delete-grafana () {
-  kubectl delete ns grafana
+delete-tig () {
+  kubectl delete ns tig
 }
 
 delete-flink () {
@@ -60,8 +60,8 @@ delete () {
     tick)
       delete-tick
       ;;
-    grafana)
-      delete-grafana
+    tig)
+      delete-tig
       ;;
     cluster)
       delete-cluster
