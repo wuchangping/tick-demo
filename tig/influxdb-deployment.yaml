@@ -6,8 +6,6 @@ metadata:
     app: influxdb
   namespace: tig
 spec:
-#  strategy:
-#    type: Recreate
   template:
     metadata:
       labels:
