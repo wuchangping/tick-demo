@@ -13,8 +13,8 @@ delete-flink () {
   kubectl delete ns flink
 }
 
-delete-flink-1 () {
-  kubectl delete ns flink-1
+delete-flink-k8s () {
+  kubectl delete ns flink-k8s
 }
 
 delete-cluster () {
@@ -43,8 +43,8 @@ delete () {
     flink)
       delete-flink
       ;;
-    flink-1)
-      delete-flink-1
+    flink-k8s)
+      delete-flink-k8s
       ;;
     tick)
       delete-tick

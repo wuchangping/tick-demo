@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: taskmanager-deployment
+  namespace: flink-1
+spec:
+  replicas: 2
+#  selector:
+#    component: taskmanager
+  template:
+    metadata:
+      labels:
+        component: taskmanager
+    spec:
+      hostNetwork: true
+      containers:
+        - name: taskmanager
+          image: wuchangping/flink:1.6.0
+          args: ["taskmanager", "jobmanager.rpc.address=jobmanager.flink.svc.cluster.local", "blob.server.port=50101"]
+          ports:
+            - containerPort: 6121
+            - containerPort: 6122
+            - containerPort: 50101
+          resources:
+            requests:
+              cpu: 100m

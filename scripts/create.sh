@@ -30,16 +30,16 @@ create-flink () {
   kubectl get svc --namespace flink  
 }
 
-create-flink-1 () {
-  echo "Creating flink-1..."
-  kube $BP/flink-1/namespace.yaml
-  kube $BP/flink-1/jobmanager-deployment.yaml
-  kube $BP/flink-1/jobmanager-service.yaml
-  kube $BP/flink-1/jobmanager-webui-service.yaml
-  kube $BP/flink-1/taskmanager-deployment.yaml
+create-flink-k8s () {
+  echo "Creating flink-k8s..."
+  kube $BP/flink-k8s/namespace.yaml
+  kube $BP/flink-k8s/jobmanager-deployment.yaml
+  kube $BP/flink-k8s/jobmanager-service.yaml
+  kube $BP/flink-k8s/jobmanager-webui-service.yaml
+  kube $BP/flink-k8s/taskmanager-deployment.yaml
 
-  echo "kubectl get svc --namespace flink-1  "
-  kubectl get svc --namespace flink-1  
+  echo "kubectl get svc --namespace flink-k8s  "
+  kubectl get svc --namespace flink-k8s
 }
 
 create-flink-standalone () {
@@ -98,8 +98,8 @@ create () {
     flink)
       create-flink
       ;;
-    flink-1)
-      create-flink-1
+    flink-k8s)
+      create-flink-k8s
       ;;
     flink-standalone)
       create-flink-standalone
