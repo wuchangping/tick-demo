@@ -70,6 +70,21 @@ create-tick () {
   kubectl get svc --namespace tick  
 }
 
+create-grafana () {
+  echo "Creating grafana..."
+  kube $BP/grafana/namespace.yml
+  kube $BP/grafana/influxdb-service.yml
+  kube $BP/grafana/influxdb-deployment.yml
+  kube $BP/grafana/grafana-service.yml
+  kube $BP/grafana/grafana-deployment.yml
+  kubectl create configmap --namespace grafana telegraf-config --from-file $BP/grafana/config/telegraf.conf
+  kube $BP/grafana/daemonsets/telegraf.yml
+
+  echo "Waiting for public IP..."
+  echo "kubectl get svc --namespace grafana  "
+  kubectl get svc --namespace grafana
+}
+
 create-usage () {
   cat <<-HERE 
   $0 create
@@ -106,6 +121,9 @@ create () {
       ;;
     tick)
       create-tick
+      ;;
+    grafana)
+      create-grafana
       ;;
     cluster)
       create-cluster
