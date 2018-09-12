@@ -51,7 +51,7 @@ delete () {
     flink)
       delete-flink
       ;;
-    flink)
+    flink-standalone)
       delete-flink-standalone
       ;;
     flink-k8s)
