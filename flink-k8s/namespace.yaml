@@ -1,6 +1,6 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: flink-1
+  name: flink-k8s
   labels:
-    name: flink-1
+    name: flink-k8s

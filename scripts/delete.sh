@@ -13,6 +13,10 @@ delete-flink () {
   kubectl delete ns flink
 }
 
+delete-flink-standalone () {
+  kubectl delete ns flink
+}
+
 delete-flink-k8s () {
   kubectl delete ns flink-k8s
 }
@@ -42,6 +46,9 @@ delete () {
   case $1 in
     flink)
       delete-flink
+      ;;
+    flink)
+      delete-flink-standalone
       ;;
     flink-k8s)
       delete-flink-k8s
