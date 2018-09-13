@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: flink
-  namespace: flink
+  namespace: tick
 spec:
   replicas: 1
   template:
@@ -25,8 +25,9 @@ spec:
           name: blob
         - containerPort: 6125
           name: query
-        - containerPort: 8125
-          name: metrics
+#        - containerPort: 8125
+#          hostPort: 8125
+#          name: metrics
         resources:
           limits:
             cpu: 1

@@ -9,9 +9,9 @@ deploy () {
       sleep 2
       create disks
       sleep 2
-      create flink-standalone
-      sleep 2
       create tick
+      sleep 2
+      create flink-standalone
       exit 0
       ;;
     shutdown)

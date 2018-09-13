@@ -44,12 +44,12 @@ create-flink-k8s () {
 
 create-flink-standalone () {
   echo "Creating flink standalone..."
-  kube $BP/flink-standalone/namespace.yaml
+#  kube $BP/flink-standalone/namespace.yaml
   kube $BP/flink-standalone/service.yaml
   kube $BP/flink-standalone/deployment.yaml
 
   echo "kubectl get svc --namespace flink  "
-  kubectl get svc --namespace flink  
+  kubectl get svc --namespace tick
 }
 
 create-tick () {

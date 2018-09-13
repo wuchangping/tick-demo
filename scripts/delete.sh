@@ -24,7 +24,7 @@ delete-flink () {
 }
 
 delete-flink-standalone () {
-  kubectl delete ns flink
+  kubectl delete ns tick
 }
 
 delete-flink-k8s () {

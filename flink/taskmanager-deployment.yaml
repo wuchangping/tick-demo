@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: flink-taskmanager
-  namespace: flink
+  namespace: tick
 spec:
   replicas: 2
   template:

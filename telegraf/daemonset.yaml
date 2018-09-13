@@ -13,6 +13,11 @@ spec:
         - name: telegraf
           image: telegraf:latest
           imagePullPolicy: Always
+          ports:
+          - containerPort: 8125
+            name: metrics
+            hostPort: 8125
+            protocol: UDP
           env:
           - name: POD_NAMESPACE
             valueFrom:

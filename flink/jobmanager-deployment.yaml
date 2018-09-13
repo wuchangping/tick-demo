@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: flink-jobmanager
-  namespace: flink
+  namespace: tick
 spec:
   replicas: 1
   template:
@@ -26,6 +26,6 @@ spec:
           name: query
         - containerPort: 8081
           name: http
-        env:
-        - name: JOB_MANAGER_RPC_ADDRESS
-          value: flink-jobmanager
+      #  env:
+      #  - name: JOB_MANAGER_RPC_ADDRESS
+      #    value: flink-jobmanager
